@@ -1,11 +1,23 @@
 {
   "rubrik": "Klubben för racketsport i Kalmar.",
   "text": "Här samlas medlemmar, juniorer, motionärer och tävlingsspelare för tennis, padel, pickleball, gym och kurser - året runt.",
-  "bild": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1800&q=85",
-  "announcement": "",
+  "bild": "/images/uploads/namnlös-design.jpg",
+  "announcement": "Missa inte att Sommarkurserna är öppna för anmälan!",
   "infopaneler": [
-    { "label": "Reception", "varde": "10.00–18.00", "sub": "Måndag–torsdag" },
-    { "label": "Medlemspris", "varde": "160 kr/h", "sub": "Tennis, padel och pickleball" },
-    { "label": "Swish", "varde": "123 388 50 43", "sub": "Reception, shop & drop-in" }
+    {
+      "label": "Reception öppen 7dagar i veckan",
+      "varde": "Mån-Tors 10.00–18.00, Fre 10.00-1700, Helg & Röd dag 10.00-15.00",
+      "sub": "Fik, boka banor, shop mm"
+    },
+    {
+      "label": "Banhyra",
+      "varde": "Från 100 kr/h",
+      "sub": "Tennis, padel och pickleball"
+    },
+    {
+      "label": "Medlemskap",
+      "varde": "Junior, Senior eller Familj",
+      "sub": "Rabatter på banhyra, kurser, abonnemang, drop-in, privatlektioner & bollmaskin "
+    }
   ]
 }
