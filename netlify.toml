@@ -1,0 +1,16 @@
+# Netlify-konfiguration för Kalmar TK
+# Aktiverar CMS-inloggning via Netlify Identity
+
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"

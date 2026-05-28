@@ -1,0 +1,22 @@
+{
+  "rubrik": "Våra partners",
+  "ingress": "Vi är stolta över våra partners som möjliggör vår verksamhet och hjälper oss att utveckla tennisen, padeln och pickleballen i Kalmar.",
+  "paket": [
+    {
+      "namn": "Guldpartner",
+      "pris": "",
+      "beskrivning": "Synlighet på samtliga sidor, logga på hemsida och i hallen, inbjudan till partnermingel och rabatterade banor för anställda."
+    },
+    {
+      "namn": "Silverpartner",
+      "pris": "",
+      "beskrivning": "Logga på partnersida och i hallen, inbjudan till partnermingel."
+    },
+    {
+      "namn": "Bronspartner",
+      "pris": "",
+      "beskrivning": "Logga på partnersida med länk till hemsida."
+    }
+  ],
+  "partners": []
+}

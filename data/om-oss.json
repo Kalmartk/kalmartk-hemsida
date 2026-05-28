@@ -1,0 +1,17 @@
+{
+  "rubrik": "En etablerad racketsportklubb med över 110 år i Kalmar.",
+  "ingress": "Kalmar Tennisklubb bildades 1914 och är idag en samlingsplats för tennis, padel, pickleball, gym, kurser, tävlingar och socialt klubbspel.",
+  "text1": "Kalmar Tennisklubb ligger i ett naturskönt område bara några hundra meter från Kalmarsund och Ölandsbron. Bad, minigolf, ströv- och motionsområden och Kalmar centrum finns i närheten. Vi är idag en av de största klubbarna i Småland med över 900 medlemmar, varav cirka 300 är ungdomar i juniorträningen.",
+  "text2": "Klubben drivs ideellt och i nära samarbete med medlemmar, tränare, partners och sponsorer. Hos oss finns 4 GreenSet-banor inomhus, 4 grusbanor och en hardcourt utomhus, 6 padelbanor inomhus, 3 padelbanor utomhus och 2 pickleballbanor utomhus - plus shop, gym och café.",
+  "fakta": [
+    { "etikett": "Bildad", "varde": "17 april 1914" },
+    { "etikett": "Medlemmar", "varde": "900+ varav ~300 juniorer" },
+    { "etikett": "Hemmaplan", "varde": "Ängöleden 11, Kalmar" },
+    { "etikett": "Tennis", "varde": "4 inomhus, 5 utomhus" },
+    { "etikett": "Padel", "varde": "6 inomhus, 3 utomhus" },
+    { "etikett": "Pickleball", "varde": "2 utomhus" },
+    { "etikett": "Service", "varde": "Gym, shop, café, reception" },
+    { "etikett": "Bokningssystem", "varde": "Matchi.se" },
+    { "etikett": "Swish", "varde": "123 388 50 43" }
+  ]
+}

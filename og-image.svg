@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e1410"/>
+      <stop offset="100%" stop-color="#1a241e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#c9f04a" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#c9f04a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- KTK logga -->
+  <rect x="80" y="80" width="100" height="100" rx="22" fill="#c9f04a"/>
+  <text x="130" y="148" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="800" text-anchor="middle" fill="#0e1410">KTK</text>
+
+  <!-- Klubbnamn vid logga -->
+  <text x="210" y="125" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700" fill="#f4f1e8">Kalmar Tennisklubb</text>
+  <text x="210" y="158" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="500" fill="#b8b3a3" letter-spacing="2">SEDAN 1914</text>
+
+  <!-- Eyebrow -->
+  <text x="80" y="320" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" fill="#c9f04a" letter-spacing="3">TENNIS · PADEL · PICKLEBALL</text>
+
+  <!-- Huvudrubrik -->
+  <text x="80" y="400" font-family="Inter Tight, Inter, system-ui, sans-serif" font-size="76" font-weight="700" fill="#f4f1e8">Klubben för</text>
+  <text x="80" y="480" font-family="Inter Tight, Inter, system-ui, sans-serif" font-size="76" font-weight="700" fill="#f4f1e8">racketsport i Kalmar.</text>
+
+  <!-- Bottenrad -->
+  <line x1="80" y1="540" x2="1120" y2="540" stroke="#f4f1e8" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="80" y="580" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="500" fill="#b8b3a3">Ängöleden 11, Kalmar  ·  kalmartk.se</text>
+  <text x="1120" y="580" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" fill="#c9f04a" text-anchor="end">Boka på Matchi.se</text>
+</svg>

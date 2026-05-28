@@ -1,0 +1,12 @@
+{
+  "rubrik": "Bli en del av Kalmar Tennisklubb.",
+  "ingress": "Som medlem får du rabatterade priser, plats i kurser och full tillgång till klubbens verksamhet.",
+  "text": "Kontakta receptionen för aktuell information om avgifter, ansökan och de olika medlemsformerna som klubben erbjuder.",
+  "fordelar": [
+    { "rubrik": "Medlemspris på banor", "beskrivning": "160 kr/h per bana på utvalda tider och banor." },
+    { "rubrik": "Kurser & tennisskola", "beskrivning": "Förtur till kurser och tennisskolan för barn och vuxna." },
+    { "rubrik": "Tävlingsspel", "beskrivning": "Möjlighet att representera klubben i seriespel och tävlingar." },
+    { "rubrik": "Gym & shop", "beskrivning": "Tillgång till klubbens gym och rabatterade priser i shopen." },
+    { "rubrik": "Gemenskap", "beskrivning": "Klubbaktiviteter, drop-in, sociala kvällar och hela klubblivet." }
+  ]
+}

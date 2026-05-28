@@ -1,0 +1,447 @@
+/**
+ * Kalmar TK – CMS-motor
+ * Läser JSON-datafiler och renderar rätt innehåll på varje sida.
+ */
+
+// ── Hjälpfunktioner ───────────────────────────────────────
+
+async function fetchData(file) {
+  const res = await fetch(`/data/${file}?v=${Date.now()}`);
+  if (!res.ok) throw new Error(`Kunde inte ladda ${file}`);
+  return res.json();
+}
+
+function el(selector) { return document.querySelector(selector); }
+function els(selector) { return document.querySelectorAll(selector); }
+
+function setText(selector, text) {
+  const node = el(selector);
+  if (node) node.textContent = text || '';
+}
+
+function setHTML(selector, html) {
+  const node = el(selector);
+  if (node) node.innerHTML = html || '';
+}
+
+function setAttr(selector, attr, value) {
+  const node = el(selector);
+  if (node && value) node.setAttribute(attr, value);
+}
+
+// ── Gemensamma element (header/footer) ───────────────────
+
+async function renderGlobal() {
+  try {
+    const [kontakt, priser] = await Promise.all([
+      fetchData('kontakt.json'),
+      fetchData('priser.json')
+    ]);
+
+    // Telefon
+    els('[data-telefon]').forEach(n => {
+      n.textContent = kontakt.telefon;
+      if (n.tagName === 'A') n.href = 'tel:' + kontakt.telefon.replace(/[^0-9]/g, '');
+    });
+
+    // E-post
+    els('[data-epost]').forEach(n => {
+      n.textContent = kontakt.epost;
+      if (n.tagName === 'A') n.href = 'mailto:' + kontakt.epost;
+    });
+
+    // Adress
+    els('[data-adress]').forEach(n => { n.textContent = kontakt.adress; });
+
+    // Swish
+    els('[data-swish]').forEach(n => { n.textContent = kontakt.swish; });
+
+    // Öppettider
+    const otContainers = els('[data-oppettider]');
+    if (kontakt.oppettider) {
+      const otHTML = kontakt.oppettider
+        .map(o => `<li><span>${o.dagar}</span><strong>${o.tid}</strong></li>`)
+        .join('');
+      otContainers.forEach(c => { c.innerHTML = otHTML; });
+    }
+
+    // Speltider (banor)
+    els('[data-speltider]').forEach(n => { n.textContent = kontakt.speltider || ''; });
+
+    // Gymmets öppettider
+    els('[data-gymtider]').forEach(n => { n.textContent = kontakt.gymtider || ''; });
+
+    // Pris
+    els('[data-pris]').forEach(n => { n.textContent = priser.medlemspris; });
+    els('[data-pris-beskrivning]').forEach(n => { n.textContent = priser.beskrivning; });
+
+  } catch (e) {
+    console.warn('Global data:', e);
+  }
+}
+
+// ── Startsida ─────────────────────────────────────────────
+
+async function renderStartsida() {
+  try {
+    const d = await fetchData('startsida.json');
+
+    setText('[data-hero-rubrik]', d.rubrik);
+    setText('[data-hero-text]', d.text);
+
+    if (d.bild) {
+      const img = el('[data-hero-bild]');
+      if (img) img.src = d.bild;
+    }
+
+    // Announcement-banner
+    const ann = el('[data-announcement]');
+    if (ann) {
+      if (d.announcement) {
+        ann.querySelector('[data-announcement-text]').textContent = d.announcement;
+        ann.style.display = '';
+      } else {
+        ann.style.display = 'none';
+      }
+    }
+
+    // Infopaneler
+    if (d.infopaneler) {
+      const container = el('[data-infopaneler]');
+      if (container) {
+        container.innerHTML = d.infopaneler.map(p => `
+          <div>
+            <span class="panel-label">${p.label}</span>
+            <strong>${p.varde}</strong>
+            <small>${p.sub}</small>
+          </div>`).join('');
+      }
+    }
+
+  } catch (e) { console.warn('Startsida:', e); }
+}
+
+// ── Om oss ────────────────────────────────────────────────
+
+async function renderOmOss() {
+  try {
+    const d = await fetchData('om-oss.json');
+    setText('[data-om-rubrik]', d.rubrik);
+    setText('[data-om-ingress]', d.ingress);
+    setText('[data-om-text1]', d.text1);
+    setText('[data-om-text2]', d.text2);
+
+    if (d.fakta) {
+      const container = el('[data-om-fakta]');
+      if (container) {
+        container.innerHTML = d.fakta.map(f => `
+          <div>
+            <span>${f.etikett}</span>
+            <strong>${f.varde}</strong>
+          </div>`).join('');
+      }
+    }
+  } catch (e) { console.warn('Om oss:', e); }
+}
+
+// ── Sport-sida (tennis / padel / pickleball) ─────────────
+
+async function renderSport(dataFile) {
+  try {
+    const d = await fetchData(dataFile);
+
+    setText('[data-sport-rubrik]', d.rubrik);
+    setText('[data-sport-ingress]', d.ingress);
+    setText('[data-sport-text]', d.text);
+
+    // Set sport label from dataFile name
+    const sportLabel = el('#sport-label');
+    if (sportLabel) {
+      const name = dataFile.replace('.json', '');
+      sportLabel.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+    }
+
+    if (d.bild) {
+      const img = el('[data-sport-bild]');
+      if (img) img.src = d.bild;
+    }
+
+    // Kurser
+    const container = el('[data-kurser]');
+    if (container) {
+      if (d.kurser && d.kurser.length > 0) {
+        container.innerHTML = d.kurser.map(grupp => `
+          <div class="course-group">
+            <div class="course-group-title">
+              <h3>${grupp.grupp}</h3>
+            </div>
+            <div class="course-grid">
+              ${grupp.tillfallen.map(t => `
+                <a class="course-card" href="${t.url}" target="_blank" rel="noreferrer">
+                  <span>${t.etikett}</span>
+                  <strong>${t.namn}</strong>
+                  <small>${t.beskrivning}</small>
+                </a>`).join('')}
+            </div>
+          </div>`).join('');
+      } else {
+        // Hide the entire kurser section when no courses exist
+        const kurserSection = container.closest('section');
+        if (kurserSection) kurserSection.style.display = 'none';
+      }
+    }
+  } catch (e) { console.warn('Sport:', e); }
+}
+
+// ── Tävlingar & Evenemang ────────────────────────────────
+
+async function renderTavlingar() {
+  try {
+    const d = await fetchData('tavlingar.json');
+    setText('[data-tavlingar-rubrik]', d.rubrik);
+    setText('[data-tavlingar-ingress]', d.ingress);
+
+    const container = el('[data-evenemang]');
+    const tomMsg = el('[data-evenemang-tom]');
+
+    if (d.evenemang && d.evenemang.length > 0) {
+      container.innerHTML = '<div class="event-list">' + d.evenemang.map(e => {
+        const hasImage = e.bild && e.bild.length > 0;
+        return `
+          <article class="event-card${hasImage ? ' has-image' : ''}">
+            ${hasImage ? `<div class="event-card-image"><img src="${e.bild}" alt="${e.titel}" loading="lazy"/></div>` : ''}
+            <div class="event-card-body">
+              <div class="event-card-meta">
+                <span class="event-badge">${e.typ}</span>
+                <span class="event-date">${e.datum}</span>
+              </div>
+              <h3>${e.titel}</h3>
+              <p>${e.beskrivning}</p>
+              ${e.url ? `<a class="button primary" href="${e.url}" target="_blank" rel="noreferrer">Mer info / Anmälan</a>` : ''}
+            </div>
+          </article>`;
+      }).join('') + '</div>';
+      if (tomMsg) tomMsg.style.display = 'none';
+    } else {
+      if (tomMsg) tomMsg.style.display = '';
+    }
+  } catch (e) { console.warn('Tävlingar:', e); }
+}
+
+// ── Dokument ─────────────────────────────────────────────
+
+async function renderDokument() {
+  try {
+    const d = await fetchData('dokument.json');
+    setText('[data-dok-rubrik]', d.rubrik);
+    setText('[data-dok-ingress]', d.ingress);
+
+    const container = el('[data-dokument-lista]');
+    const tomMsg = el('[data-dokument-tom]');
+
+    if (d.filer && d.filer.length > 0) {
+      const icons = { 'Träningsschema': '📋', 'Blankett': '📝', 'Information': 'ℹ️', 'Protokoll': '📄', 'Övrigt': '📎' };
+      container.innerHTML = '<div class="document-list">' + d.filer.map(f => `
+        <a class="document-card" href="${f.fil}" target="_blank" rel="noreferrer">
+          <div class="document-icon">${icons[f.kategori] || '📄'}</div>
+          <div class="document-info">
+            <strong>${f.titel}</strong>
+            <small>${f.kategori}${f.beskrivning ? ' · ' + f.beskrivning : ''}</small>
+          </div>
+          <span class="document-action">Öppna ↗</span>
+        </a>`).join('') + '</div>';
+      if (tomMsg) tomMsg.style.display = 'none';
+    } else {
+      if (tomMsg) tomMsg.style.display = '';
+    }
+  } catch (e) { console.warn('Dokument:', e); }
+}
+
+// ── Bildgalleri ──────────────────────────────────────────
+
+async function renderGalleri() {
+  try {
+    const d = await fetchData('galleri.json');
+    setText('[data-galleri-rubrik]', d.rubrik);
+    setText('[data-galleri-ingress]', d.ingress);
+
+    const container = el('[data-galleri-bilder]');
+    const tomMsg = el('[data-galleri-tom]');
+
+    if (d.bilder && d.bilder.length > 0) {
+      container.innerHTML = d.bilder.map(b => `
+        <figure class="gallery-item">
+          <img src="${b.bild}" alt="${b.text || 'Bild från Kalmar TK'}" loading="lazy"/>
+          ${b.text ? `<figcaption>${b.text}</figcaption>` : ''}
+        </figure>`).join('');
+      if (tomMsg) tomMsg.style.display = 'none';
+    } else {
+      if (tomMsg) tomMsg.style.display = '';
+    }
+  } catch (e) { console.warn('Galleri:', e); }
+}
+
+// ── Partners ─────────────────────────────────────────────
+
+async function renderPartner() {
+  try {
+    const d = await fetchData('partners.json');
+    setText('[data-partner-rubrik]', d.rubrik);
+    setText('[data-partner-ingress]', d.ingress);
+
+    // Render partnerpaket
+    const paketContainer = el('[data-partner-paket]');
+    const paketSection = el('[data-partner-paket-section]');
+    if (d.paket && d.paket.length > 0 && paketContainer) {
+      const tierClass = (n) => {
+        const lower = (n || '').toLowerCase();
+        if (lower.includes('guld')) return 'tier-guld';
+        if (lower.includes('silver')) return 'tier-silver';
+        if (lower.includes('brons')) return 'tier-brons';
+        return '';
+      };
+      paketContainer.innerHTML = d.paket.map(p => `
+        <article class="partner-paket-card ${tierClass(p.namn)}">
+          <h3>${p.namn}</h3>
+          ${p.pris ? `<div class="pris">${p.pris}</div>` : ''}
+          <p>${p.beskrivning}</p>
+        </article>`).join('');
+      if (paketSection) paketSection.style.display = '';
+    }
+
+    // Render partners grouped by nivå
+    const listContainer = el('[data-partner-listor]');
+    const tomMsg = el('[data-partner-tom]');
+
+    if (d.partners && d.partners.length > 0 && listContainer) {
+      // Group by nivå
+      const order = ['Guld', 'Silver', 'Brons', 'Övrig'];
+      const groups = {};
+      d.partners.forEach(p => {
+        const niva = p.niva || 'Övrig';
+        if (!groups[niva]) groups[niva] = [];
+        groups[niva].push(p);
+      });
+
+      const html = order
+        .filter(niva => groups[niva] && groups[niva].length > 0)
+        .map(niva => {
+          const tierClass = niva.toLowerCase().replace('ö', 'o');
+          const partners = groups[niva].map(p => {
+            const inner = p.logo
+              ? `<img src="${p.logo}" alt="${p.namn}" loading="lazy"/>`
+              : `<span class="partner-card-text">${p.namn}</span>`;
+            return p.url
+              ? `<a class="partner-card" href="${p.url}" target="_blank" rel="noreferrer" title="${p.namn}">${inner}</a>`
+              : `<div class="partner-card" title="${p.namn}">${inner}</div>`;
+          }).join('');
+          return `
+            <div class="partner-tier-block">
+              <div class="partner-tier-label tier-${tierClass}">${niva}partners</div>
+              <div class="partner-grid ${tierClass}">${partners}</div>
+            </div>`;
+        }).join('');
+
+      listContainer.innerHTML = html;
+      if (tomMsg) tomMsg.style.display = 'none';
+    } else {
+      if (tomMsg) tomMsg.style.display = '';
+    }
+  } catch (e) { console.warn('Partner:', e); }
+}
+
+// ── Gym / Shop (enkel sida utan kurser) ──────────────────
+
+async function renderEnkelSida(dataFile) {
+  try {
+    const d = await fetchData(dataFile);
+    setText('[data-rubrik]', d.rubrik);
+    setText('[data-ingress]', d.ingress);
+    setText('[data-text]', d.text);
+    if (d.bild) {
+      const img = el('[data-bild]');
+      if (img) { img.src = d.bild; img.parentElement.style.display = ''; }
+    } else {
+      const imgWrap = el('[data-bild-wrap]');
+      if (imgWrap) imgWrap.style.display = 'none';
+    }
+  } catch (e) { console.warn('Enkel sida:', e); }
+}
+
+// ── Bli medlem ────────────────────────────────────────────
+
+async function renderBliMedlem() {
+  try {
+    const d = await fetchData('bli-medlem.json');
+    setText('[data-rubrik]', d.rubrik);
+    setText('[data-ingress]', d.ingress);
+    setText('[data-text]', d.text);
+
+    if (d.fordelar) {
+      const container = el('[data-fordelar]');
+      if (container) {
+        container.innerHTML = d.fordelar.map((f, i) => `
+          <article>
+            <span>${String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <strong>${f.rubrik}</strong>
+              <p>${f.beskrivning}</p>
+            </div>
+          </article>`).join('');
+      }
+    }
+  } catch (e) { console.warn('Bli medlem:', e); }
+}
+
+// ── Mobilmeny ─────────────────────────────────────────────
+
+function initMobilmeny() {
+  const btn = document.querySelector('[data-menu-button]');
+  const nav = document.querySelector('[data-nav]');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// Markera aktiv sida
+function initAktivSida() {
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.main-nav a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href === current || (current === '' && href === 'index.html')) {
+      a.classList.add('active');
+    }
+  });
+}
+
+// ── Init ──────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', async () => {
+  initMobilmeny();
+  initAktivSida();
+  await renderGlobal();
+
+  const page = document.body.dataset.page;
+  switch (page) {
+    case 'startsida':   await renderStartsida(); break;
+    case 'om-oss':      await renderOmOss(); break;
+    case 'tennis':      await renderSport('tennis.json'); break;
+    case 'padel':       await renderSport('padel.json'); break;
+    case 'pickleball':  await renderSport('pickleball.json'); break;
+    case 'gym':         await renderEnkelSida('gym.json'); break;
+    case 'shop':        await renderEnkelSida('shop.json'); break;
+    case 'bli-medlem':  await renderBliMedlem(); break;
+    case 'tavlingar':  await renderTavlingar(); break;
+    case 'dokument':   await renderDokument(); break;
+    case 'galleri':    await renderGalleri(); break;
+    case 'partner':    await renderPartner(); break;
+  }
+});

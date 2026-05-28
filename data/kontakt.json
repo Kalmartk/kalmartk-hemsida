@@ -1,0 +1,12 @@
+{
+  "telefon": "0480-13 514",
+  "epost": "info@kalmartk.se",
+  "adress": "Ängöleden 11, 392 36 Kalmar",
+  "swish": "123 388 50 43",
+  "oppettider": [
+    { "dagar": "Måndag–torsdag", "tid": "10.00–18.00" },
+    { "dagar": "Fredag–söndag", "tid": "10.00–15.00" }
+  ],
+  "speltider": "Måndag–söndag 05.30–23.00",
+  "gymtider": "Alla dagar 06.00–23.00"
+}

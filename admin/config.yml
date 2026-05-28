@@ -1,0 +1,292 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: sv
+
+collections:
+
+  # ── GLOBAL INFORMATION ──────────────────────────────────
+  - name: "installningar"
+    label: "⚙️ Klubbinformation"
+    files:
+
+      - name: "kontakt"
+        label: "Kontakt & öppettider"
+        file: "data/kontakt.json"
+        fields:
+          - { label: "Telefon", name: "telefon", widget: "string", hint: "Visas i header och footer. Exempel: 0480-13 514" }
+          - { label: "E-post", name: "epost", widget: "string", hint: "Exempel: info@kalmartk.se" }
+          - { label: "Adress", name: "adress", widget: "string", hint: "Exempel: Ängöleden 11, 392 36 Kalmar" }
+          - { label: "Swish-nummer", name: "swish", widget: "string", hint: "Exempel: 123 388 50 43" }
+          - label: "Öppettider reception"
+            name: "oppettider"
+            widget: "list"
+            fields:
+              - { label: "Dag(ar)", name: "dagar", widget: "string", hint: "Exempel: Måndag–torsdag" }
+              - { label: "Tid", name: "tid", widget: "string", hint: "Exempel: 10.00–18.00" }
+          - { label: "Speltider (banor)", name: "speltider", widget: "string", required: false, hint: "Exempel: Måndag–söndag 05.30–23.00" }
+          - { label: "Gymmets öppettider", name: "gymtider", widget: "string", required: false, hint: "Exempel: Alla dagar 06.00–23.00" }
+
+      - name: "priser"
+        label: "Priser"
+        file: "data/priser.json"
+        fields:
+          - { label: "Medlemspris per bana/timme", name: "medlemspris", widget: "string", hint: "Exempel: 160 kr/h" }
+          - { label: "Beskrivning", name: "beskrivning", widget: "string", hint: "Exempel: Inomhus helgfria vardagar 06–16" }
+          - { label: "Swish för betalning", name: "swish", widget: "string" }
+
+  # ── STARTSIDA ────────────────────────────────────────────
+  - name: "startsida"
+    label: "🏠 Startsida"
+    files:
+      - name: "hero"
+        label: "Stor bild och text överst"
+        file: "data/startsida.json"
+        fields:
+          - { label: "Stor rubrik", name: "rubrik", widget: "string", hint: "Kort och slagkraftig. Exempel: Klubben för racketsport i Kalmar." }
+          - { label: "Undertext", name: "text", widget: "text", hint: "2–3 meningar om klubben." }
+          - { label: "Bakgrundsbild", name: "bild", widget: "image", hint: "Liggande bild, minst 1800px bred. Helst en tennisbild från klubben." }
+          - { label: "Aktuellt meddelande (valfritt)", name: "announcement", widget: "string", required: false, hint: "Visas i en grön banner. Exempel: Sommarkurser öppna för anmälan!" }
+          - label: "Informationsrutor (höger sida)"
+            name: "infopaneler"
+            widget: "list"
+            max: 3
+            fields:
+              - { label: "Rubrik", name: "label", widget: "string", hint: "Exempel: Reception" }
+              - { label: "Värde", name: "varde", widget: "string", hint: "Exempel: 10.00–18.00" }
+              - { label: "Undertext", name: "sub", widget: "string", hint: "Exempel: Måndag–torsdag" }
+
+  # ── OM OSS ───────────────────────────────────────────────
+  - name: "om_oss"
+    label: "ℹ️ Om oss"
+    files:
+      - name: "om"
+        label: "Om klubben"
+        file: "data/om-oss.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string" }
+          - { label: "Ingress", name: "ingress", widget: "text" }
+          - { label: "Brödtext stycke 1", name: "text1", widget: "text" }
+          - { label: "Brödtext stycke 2", name: "text2", widget: "text" }
+          - label: "Faktaruta"
+            name: "fakta"
+            widget: "list"
+            fields:
+              - { label: "Etikett", name: "etikett", widget: "string", hint: "Exempel: Bildad" }
+              - { label: "Värde", name: "varde", widget: "string", hint: "Exempel: 17 april 1914" }
+
+  # ── TENNIS ───────────────────────────────────────────────
+  - name: "tennis"
+    label: "🎾 Tennis"
+    files:
+      - name: "tennis"
+        label: "Tennissidan"
+        file: "data/tennis.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string" }
+          - { label: "Ingress", name: "ingress", widget: "text" }
+          - { label: "Bild", name: "bild", widget: "image" }
+          - { label: "Brödtext", name: "text", widget: "text" }
+          - label: "Kurser"
+            name: "kurser"
+            widget: "list"
+            fields:
+              - { label: "Grupp/rubrik", name: "grupp", widget: "string", hint: "Exempel: Sommarkurser 2026" }
+              - label: "Kurstillfällen"
+                name: "tillfallen"
+                widget: "list"
+                fields:
+                  - { label: "Etikett", name: "etikett", widget: "string", hint: "Exempel: v.23" }
+                  - { label: "Kursnamn", name: "namn", widget: "string" }
+                  - { label: "Beskrivning", name: "beskrivning", widget: "string" }
+                  - { label: "Anmälningslänk (Matchi)", name: "url", widget: "string" }
+
+  # ── PADEL ────────────────────────────────────────────────
+  - name: "padel"
+    label: "🏓 Padel"
+    files:
+      - name: "padel"
+        label: "Padelsidan"
+        file: "data/padel.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string" }
+          - { label: "Ingress", name: "ingress", widget: "text" }
+          - { label: "Bild", name: "bild", widget: "image" }
+          - { label: "Brödtext", name: "text", widget: "text" }
+          - label: "Kurser"
+            name: "kurser"
+            widget: "list"
+            fields:
+              - { label: "Grupp/rubrik", name: "grupp", widget: "string" }
+              - label: "Kurstillfällen"
+                name: "tillfallen"
+                widget: "list"
+                fields:
+                  - { label: "Etikett", name: "etikett", widget: "string" }
+                  - { label: "Kursnamn", name: "namn", widget: "string" }
+                  - { label: "Beskrivning", name: "beskrivning", widget: "string" }
+                  - { label: "Anmälningslänk (Matchi)", name: "url", widget: "string" }
+
+  # ── PICKLEBALL ───────────────────────────────────────────
+  - name: "pickleball"
+    label: "🥒 Pickleball"
+    files:
+      - name: "pickleball"
+        label: "Pickleballsidan"
+        file: "data/pickleball.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string" }
+          - { label: "Ingress", name: "ingress", widget: "text" }
+          - { label: "Bild", name: "bild", widget: "image" }
+          - { label: "Brödtext", name: "text", widget: "text" }
+          - label: "Kurser"
+            name: "kurser"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Grupp/rubrik", name: "grupp", widget: "string", hint: "Exempel: Hösttermin Pickleball 2026" }
+              - label: "Kurstillfällen"
+                name: "tillfallen"
+                widget: "list"
+                fields:
+                  - { label: "Etikett", name: "etikett", widget: "string" }
+                  - { label: "Kursnamn", name: "namn", widget: "string" }
+                  - { label: "Beskrivning", name: "beskrivning", widget: "string" }
+                  - { label: "Anmälningslänk (Matchi)", name: "url", widget: "string" }
+
+  # ── GYM ─────────────────────────────────────────────────
+  - name: "gym"
+    label: "💪 Gym"
+    files:
+      - name: "gym"
+        label: "Gymsidan"
+        file: "data/gym.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string" }
+          - { label: "Ingress", name: "ingress", widget: "text" }
+          - { label: "Bild", name: "bild", widget: "image", required: false }
+          - { label: "Brödtext", name: "text", widget: "text" }
+
+  # ── SHOP ─────────────────────────────────────────────────
+  - name: "shop"
+    label: "🛍️ Shop"
+    files:
+      - name: "shop"
+        label: "Shopsidan"
+        file: "data/shop.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string" }
+          - { label: "Ingress", name: "ingress", widget: "text" }
+          - { label: "Bild", name: "bild", widget: "image", required: false }
+          - { label: "Brödtext", name: "text", widget: "text" }
+
+  # ── BLI MEDLEM ───────────────────────────────────────────
+  - name: "bli_medlem"
+    label: "👤 Bli medlem"
+    files:
+      - name: "medlem"
+        label: "Bli medlem-sidan"
+        file: "data/bli-medlem.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string" }
+          - { label: "Ingress", name: "ingress", widget: "text" }
+          - { label: "Brödtext", name: "text", widget: "text" }
+          - label: "Fördelar med medlemskap"
+            name: "fordelar"
+            widget: "list"
+            fields:
+              - { label: "Rubrik", name: "rubrik", widget: "string" }
+              - { label: "Beskrivning", name: "beskrivning", widget: "string" }
+
+  # ── TÄVLINGAR & EVENEMANG ──────────────────────────────
+  - name: "tavlingar"
+    label: "🏆 Tävlingar & evenemang"
+    files:
+      - name: "tavlingar"
+        label: "Tävlingar & evenemang"
+        file: "data/tavlingar.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string", hint: "Exempel: Tävlingar och evenemang på Kalmar TK." }
+          - { label: "Ingress", name: "ingress", widget: "text", hint: "Kort beskrivning av tävlingsverksamheten." }
+          - label: "Evenemang"
+            name: "evenemang"
+            widget: "list"
+            hint: "Lägg till tävlingar, cuper, klubbmästerskap och sociala event. Nyast överst."
+            fields:
+              - { label: "Titel", name: "titel", widget: "string", hint: "Exempel: World Tennis Tour J60" }
+              - { label: "Datum", name: "datum", widget: "string", hint: "Exempel: 4–10 maj 2026" }
+              - { label: "Typ", name: "typ", widget: "select", options: ["Tävling", "Kurs", "Socialt", "Övrigt"], hint: "Välj typ av evenemang" }
+              - { label: "Beskrivning", name: "beskrivning", widget: "text", hint: "Beskriv evenemanget - vad, för vem, anmälan?" }
+              - { label: "Bild (valfritt)", name: "bild", widget: "image", required: false, hint: "Ladda upp en bild - liggande format funkar bäst." }
+              - { label: "Länk (valfritt)", name: "url", widget: "string", required: false, hint: "Länk till anmälan eller mer info." }
+
+  # ── DOKUMENT ───────────────────────────────────────────
+  - name: "dokument"
+    label: "📄 Dokument & filer"
+    files:
+      - name: "dokument"
+        label: "Uppladdade dokument"
+        file: "data/dokument.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string", default: "Dokument och filer" }
+          - { label: "Ingress", name: "ingress", widget: "text", default: "Här hittar du träningsscheman, blanketter och annan information." }
+          - label: "Dokument"
+            name: "filer"
+            widget: "list"
+            hint: "Ladda upp PDF-filer, träningsscheman, blanketter osv. Nyast överst."
+            fields:
+              - { label: "Titel", name: "titel", widget: "string", hint: "Exempel: Träningsschema hösten 2026" }
+              - { label: "Kategori", name: "kategori", widget: "select", options: ["Träningsschema", "Blankett", "Information", "Protokoll", "Övrigt"], hint: "Välj typ av dokument" }
+              - { label: "Fil (PDF)", name: "fil", widget: "file", hint: "Ladda upp filen här. PDF fungerar bäst." }
+              - { label: "Beskrivning (valfritt)", name: "beskrivning", widget: "string", required: false, hint: "Kort beskrivning av vad dokumentet innehåller." }
+
+  # ── BILDGALLERI ────────────────────────────────────────
+  - name: "galleri"
+    label: "📸 Bildgalleri"
+    files:
+      - name: "galleri"
+        label: "Bilder från klubben"
+        file: "data/galleri.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string", default: "Bilder från Kalmar TK" }
+          - { label: "Ingress", name: "ingress", widget: "text", default: "Bilder från tävlingar, kurser och vardagen på klubben." }
+          - label: "Bilder"
+            name: "bilder"
+            widget: "list"
+            hint: "Ladda upp bilder från klubben. Liggande bilder fungerar bäst."
+            fields:
+              - { label: "Bild", name: "bild", widget: "image", hint: "Välj en bild från din dator eller telefon." }
+              - { label: "Bildtext (valfritt)", name: "text", widget: "string", required: false, hint: "Beskriv kort vad bilden visar." }
+
+  # ── PARTNERS / SPONSORER ──────────────────────────────
+  - name: "partners"
+    label: "🤝 Partners & sponsorer"
+    files:
+      - name: "partners"
+        label: "Partners & sponsorer"
+        file: "data/partners.json"
+        fields:
+          - { label: "Rubrik", name: "rubrik", widget: "string", default: "Våra partners" }
+          - { label: "Ingress", name: "ingress", widget: "text", default: "Vi är stolta över våra partners som möjliggör vår verksamhet." }
+          - label: "Partnerpaket"
+            name: "paket"
+            widget: "list"
+            required: false
+            hint: "Beskriv era partnerpaket (t.ex. Guld, Silver, Brons). Detta visas högst upp på sidan."
+            fields:
+              - { label: "Paketnamn", name: "namn", widget: "string", hint: "Exempel: Guldpartner" }
+              - { label: "Pris (valfritt)", name: "pris", widget: "string", required: false, hint: "Exempel: 25 000 kr/år" }
+              - { label: "Beskrivning", name: "beskrivning", widget: "text", hint: "Vad ingår i paketet?" }
+          - label: "Partners"
+            name: "partners"
+            widget: "list"
+            hint: "Lägg till företag som är partners. Logotyp visas i grupp efter nivå."
+            fields:
+              - { label: "Företagsnamn", name: "namn", widget: "string", hint: "Exempel: Avent" }
+              - { label: "Nivå", name: "niva", widget: "select", options: ["Guld", "Silver", "Brons", "Övrig"], default: "Brons", hint: "Välj partnerns nivå" }
+              - { label: "Logotyp", name: "logo", widget: "image", hint: "Ladda upp företagets logga. Transparent PNG fungerar bäst." }
+              - { label: "Webbadress", name: "url", widget: "string", hint: "Exempel: https://avent.se" }

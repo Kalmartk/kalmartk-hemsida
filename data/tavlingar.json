@@ -1,0 +1,14 @@
+{
+  "rubrik": "Tävlingar och evenemang på Kalmar TK.",
+  "ingress": "Under året arrangerar vi tävlingar, cuper, klubbmästerskap och sociala event för medlemmar och besökare.",
+  "evenemang": [
+    {
+      "titel": "Sommar-KM 2026",
+      "datum": "14–15 juni 2026",
+      "typ": "Tävling",
+      "beskrivning": "Klubbmästerskap i tennis, padel och pickleball. Öppet för alla medlemmar - anmäl dig via receptionen.",
+      "bild": "",
+      "url": ""
+    }
+  ]
+}
