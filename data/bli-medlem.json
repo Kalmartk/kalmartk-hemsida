@@ -1,7 +1,7 @@
 {
   "rubrik": "Bli en del av Kalmar Tennisklubb och stöd vår förening.",
   "ingress": "Som medlem får du rabatterade priser, inbjudningar till specifika aktiviteter som KM mm. ",
-  "text": "Kontakt receptionen för ansökan om medlemskap per kalenderår\nJunior - 250kr\nSenior - 600kr\nFamilj - 1000kr (För hela familjen men måste vara skrivna på samma adress)\n",
+  "text": "Förutom alla fördelar så hjälper ni oss som förening att kunna fortsätta bedriva vår verksamhet.\n",
   "fordelar": [
     {
       "rubrik": "Medlemspris på banor",
@@ -18,6 +18,10 @@
     {
       "rubrik": "Gemenskap",
       "beskrivning": "Klubbaktiviteter, drop-in, sociala kvällar och hela klubblivet."
+    },
+    {
+      "beskrivning": "Kontakt receptionen för ansökan om medlemskap per kalenderår Junior - 250kr Senior - 600kr Familj - 1000kr (För hela familjen men måste vara skrivna på samma adress)",
+      "rubrik": "Priser"
     }
   ]
 }
