@@ -1,6 +1,6 @@
 {
   "rubrik": "Padel - snabbt, socialt och kul att lära sig.",
-  "ingress": "Padel är klubbens snabbast växande sport. Vi har padelskola från 5 år, vuxenkurser, sommarintensiver och fria banor att boka via Matchi.",
+  "ingress": "Padel är klubbens snabbast växande sport. Vi erbjuder kurser/träning från 5år och uppåt. Vi har abonnemangstider, teknikkurser, drop-in och fria banor att boka via Matchi.",
   "bild": "/images/uploads/31102025-a7402942.jpg",
   "text": "Padel är lätt att komma igång med och passar både nybörjare och rutinerade spelare. Padelskoj är vår nyhet för de allra yngsta från 5 år.",
   "kurser": [
@@ -24,11 +24,29 @@
           "namn": "Sommarkurs Padel",
           "beskrivning": "Vecka 29 · Anmälan öppen",
           "url": "https://www.matchi.se/forms/2Wxf5Q7CfnMQHGHM5zsi"
+        },
+        {
+          "etikett": "v.30",
+          "namn": "Sommarkurs Padel",
+          "beskrivning": "Vecka 30 - Anmälan öppen",
+          "url": "https://www.matchi.se/forms/2BXbwusL9cTESjuLYVi3"
+        },
+        {
+          "etikett": "v.31",
+          "namn": "Sommarkurs Padel",
+          "beskrivning": "Vecka 31 - Anmälan öppen",
+          "url": "https://www.matchi.se/forms/HMLuaXTkHYtwzFDMR3pD"
+        },
+        {
+          "etikett": "v.33",
+          "namn": "Sommarkurs Padel",
+          "beskrivning": "Vecka 33 - Anmälan öppen",
+          "url": "https://www.matchi.se/forms/NBMGFa2nhqWVptJjwply"
         }
       ]
     },
     {
-      "grupp": "Padelskola Våren 2026",
+      "grupp": "Padelskola Hösten 2026",
       "tillfallen": [
         {
           "etikett": "5–7 år",
