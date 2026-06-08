@@ -1,48 +1,12 @@
 {
-  "rubrik": "Padel - snabbt, socialt och kul att lära sig.",
-  "ingress": "Padel är klubbens snabbast växande sport. Vi har padelskola från 5 år, vuxenkurser, sommarintensiver och fria banor att boka via Matchi.",
-  "bild": "images/sport/padel.svg",
-  "text": "Padel är lätt att komma igång med och passar både nybörjare och rutinerade spelare. Padelskoj är vår nyhet för de allra yngsta från 5 år.",
-  "kurser": [
-    {
-      "grupp": "Sommarkurser Padel 2026",
-      "tillfallen": [
-        {
-          "etikett": "v.23",
-          "namn": "Sommarkurs Padel",
-          "beskrivning": "Vecka 23 · Anmälan öppen",
-          "url": "https://www.matchi.se/forms/rX7hmqJ95B0Tnr5aG6UX"
-        },
-        {
-          "etikett": "v.28",
-          "namn": "Sommarkurs Padel",
-          "beskrivning": "Vecka 28 · Anmälan öppen",
-          "url": "https://www.matchi.se/forms/Sahcca1JaN3B04FqVUne"
-        },
-        {
-          "etikett": "v.29",
-          "namn": "Sommarkurs Padel",
-          "beskrivning": "Vecka 29 · Anmälan öppen",
-          "url": "https://www.matchi.se/forms/2Wxf5Q7CfnMQHGHM5zsi"
-        }
-      ]
-    },
-    {
-      "grupp": "Padelskola Våren 2026",
-      "tillfallen": [
-        {
-          "etikett": "5–7 år",
-          "namn": "Padelskoj",
-          "beskrivning": "Lekfull start för de minsta",
-          "url": "https://www.matchi.se/forms/bEEfmyjWxhu9w9KCHE7S"
-        },
-        {
-          "etikett": "8–19 år",
-          "namn": "Padelskola",
-          "beskrivning": "Teknik, taktik och matchspel",
-          "url": "https://www.matchi.se/forms/xw8L49U89QTdNS9qgzDb"
-        }
-      ]
-    }
+  "rubrik": "Racket, bollar, skor och klubbkläder.",
+  "ingress": "I shopen finns det du behöver för tennis, padel och pickleball. Personalen hjälper dig att hitta rätt utrustning.",
+  "bild": "",
+  "text": "Vi för in produkter från kända varumärken och kompletterar löpande utifrån vad medlemmarna efterfrågar. Betalning sker via kort eller Swish 123 388 50 43.",
+  "funktioner": [
+    { "ikon": "🎾", "rubrik": "Racketar & padelracketar", "text": "Senaste modellerna - prova innan du köper." },
+    { "ikon": "👟", "rubrik": "Skor & tillbehör", "text": "Bana-anpassade skor, grepp och dämpare." },
+    { "ikon": "👕", "rubrik": "Klubbkläder", "text": "Klubbens egna kläder och märkesplagg." },
+    { "ikon": "⚙️", "rubrik": "Omsträngning", "text": "Vi strängar om din racket på plats." }
   ]
 }

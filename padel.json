@@ -1,46 +1,89 @@
 {
-  "rubrik": "Klubben för racketsport i Kalmar.",
-  "text": "Här samlas medlemmar, juniorer, motionärer och tävlingsspelare för tennis, padel, pickleball, gym och kurser - året runt.",
-  "bild": "images/sport/hero.svg",
-  "announcement": "",
-  "infopaneler": [
+  "rubrik": "Tennis på Kalmar Tennisklubb.",
+  "ingress": "Tennis är vår grund sedan 1914. Vi erbjuder tennisskola för barn från 5 år, vuxenkurser, sommarveckor och fri banbokning - inomhus och utomhus.",
+  "bild": "images/sport/tennis.svg",
+  "text": "Tennisskolan är uppdelad i fyra nivåer från röd till gul grupp. Sommarkurserna erbjuds under utvalda veckor och vuxenkurser går under hela vårterminen.",
+  "kurser": [
     {
-      "label": "Reception",
-      "varde": "10.00–18.00",
-      "sub": "Måndag–torsdag"
+      "grupp": "Sommarkurser Tennis 2026",
+      "tillfallen": [
+        {
+          "etikett": "v.23",
+          "namn": "Sommarkurs Tennis",
+          "beskrivning": "Vecka 23 · Anmälan öppen",
+          "url": "https://www.matchi.se/forms/zwaegKEGkh2Mn1RLSw0q"
+        },
+        {
+          "etikett": "v.28",
+          "namn": "Sommarkurs Tennis",
+          "beskrivning": "Vecka 28 · Anmälan öppen",
+          "url": "https://www.matchi.se/forms/DumpFx1YSZquq8vMojCo"
+        },
+        {
+          "etikett": "v.29",
+          "namn": "Sommarkurs Tennis",
+          "beskrivning": "Vecka 29 · Anmälan öppen",
+          "url": "https://www.matchi.se/forms/IYuUQzeSvfn8GJfvD5xy"
+        },
+        {
+          "etikett": "v.30",
+          "namn": "Sommarkurs Tennis",
+          "beskrivning": "Vecka 30 · Anmälan öppen",
+          "url": "https://www.matchi.se/forms/l80uLeMcLbCckLGIBTef"
+        },
+        {
+          "etikett": "v.31",
+          "namn": "Sommarkurs Tennis",
+          "beskrivning": "Vecka 31 · Anmälan öppen",
+          "url": "https://www.matchi.se/forms/dHwrOrzRyZozKHhHyUgj"
+        }
+      ]
     },
     {
-      "label": "Medlemspris",
-      "varde": "160 kr/h",
-      "sub": "Tennis, padel och pickleball"
+      "grupp": "Tennisskola Våren 2026",
+      "tillfallen": [
+        {
+          "etikett": "5–7 år",
+          "namn": "Röd Grupp",
+          "beskrivning": "Nybörjare · grundläggande teknik",
+          "url": "https://www.matchi.se/forms/LETS34iz3L73Qk2TQbSk"
+        },
+        {
+          "etikett": "7–9 år",
+          "namn": "Orange Grupp",
+          "beskrivning": "Fortsättning · spelförståelse",
+          "url": "https://www.matchi.se/forms/BRYct7Z5T6cPHd2hOCGr"
+        },
+        {
+          "etikett": "9–11 år",
+          "namn": "Grön Grupp",
+          "beskrivning": "Vidareutveckling · match",
+          "url": "https://www.matchi.se/forms/WlGNHyNOvEruVndyXOYT"
+        },
+        {
+          "etikett": "12–19 år",
+          "namn": "Gul Grupp",
+          "beskrivning": "Tävling & teknik",
+          "url": "https://www.matchi.se/forms/MOPMKvr6fWdJbCgx4qjR"
+        }
+      ]
     },
     {
-      "label": "Swish",
-      "varde": "123 388 50 43",
-      "sub": "Reception, shop & drop-in"
-    }
-  ],
-  "sportkort": [
-    {
-      "etikett": "Tennis",
-      "rubrik": "Träning, tävling och drop-in",
-      "text": "Juniorgrupper, vuxenkurser, sommarkurser och banor för vardagsspel.",
-      "bild": "images/sport/tennis.svg",
-      "lank": "tennis.html"
-    },
-    {
-      "etikett": "Padel",
-      "rubrik": "Kurser och spontanspel",
-      "text": "Padelskola från 5 år, vuxenkurser och bokning via Matchi.",
-      "bild": "images/sport/padel.svg",
-      "lank": "padel.html"
-    },
-    {
-      "etikett": "Pickleball",
-      "rubrik": "Snabbt, socialt och lätt att börja",
-      "text": "Perfekt för alla nivåer och åldrar.",
-      "bild": "images/sport/pickleball.svg",
-      "lank": "pickleball.html"
+      "grupp": "Vuxenkurs & skolbuss",
+      "tillfallen": [
+        {
+          "etikett": "v.13–22",
+          "namn": "Vuxenkurs Tennis",
+          "beskrivning": "Tennis för vuxna på rätt nivå",
+          "url": "https://www.matchi.se/forms/fvWF1teJlsoEssgWKTot"
+        },
+        {
+          "etikett": "Våren -26",
+          "namn": "Skolbussen",
+          "beskrivning": "Smidigare väg till träningen",
+          "url": "https://www.matchi.se/forms/yiM40JCtJGpXGkyTmRxH"
+        }
+      ]
     }
   ]
 }

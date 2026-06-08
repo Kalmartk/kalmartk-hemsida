@@ -1,6 +1,12 @@
 {
-  "rubrik": "Pickleball - snabbt, socialt och lätt att börja.",
-  "ingress": "Pickleball passar alla åldrar och är enkelt att komma igång med. Vi erbjuder banor och spel - kontakta klubben för aktuell info om kurser och drop-in.",
-  "bild": "images/sport/pickleball.svg",
-  "text": "Pickleball spelas på mindre bana än tennis och med en specialdesignad boll. Det är en perfekt sport för dig som vill röra dig socialt och utan tunga krav på fysik eller teknik."
+  "rubrik": "Styrka, rörlighet och uppvärmning på samma plats.",
+  "ingress": "Klubbens gym gör anläggningen mer komplett - för spelare som vill träna styrka, värma upp inför match eller hålla igång året runt.",
+  "bild": "",
+  "text": "Gymmet är öppet för medlemmar och passar både dig som vill köra uppvärmning, rehab eller riktig styrketräning. Kontakta receptionen för aktuell information om gymtider och vad som ingår i medlemskapet.",
+  "funktioner": [
+    { "ikon": "💪", "rubrik": "Styrketräning", "text": "Fri vikt och utrustning för helkroppsträning." },
+    { "ikon": "🤸", "rubrik": "Rörlighet", "text": "Yta för stretching, rehab och uppvärmning." },
+    { "ikon": "🏃", "rubrik": "Konditionsträning", "text": "Komplement till din racketsportträning." },
+    { "ikon": "🎾", "rubrik": "Smart upplägg", "text": "Träna styrka - hoppa direkt in på banan." }
+  ]
 }

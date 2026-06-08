@@ -1,12 +1,156 @@
 {
-  "rubrik": "Racket, bollar, skor och klubbkläder.",
-  "ingress": "I shopen finns det du behöver för tennis, padel och pickleball. Personalen hjälper dig att hitta rätt utrustning.",
-  "bild": "",
-  "text": "Vi för in produkter från kända varumärken och kompletterar löpande utifrån vad medlemmarna efterfrågar. Betalning sker via kort eller Swish 123 388 50 43.",
-  "funktioner": [
-    { "ikon": "🎾", "rubrik": "Racketar & padelracketar", "text": "Senaste modellerna - prova innan du köper." },
-    { "ikon": "👟", "rubrik": "Skor & tillbehör", "text": "Bana-anpassade skor, grepp och dämpare." },
-    { "ikon": "👕", "rubrik": "Klubbkläder", "text": "Klubbens egna kläder och märkesplagg." },
-    { "ikon": "⚙️", "rubrik": "Omsträngning", "text": "Vi strängar om din racket på plats." }
+  "rubrik": "Våra partners",
+  "ingress": "Vi är stolta över våra partners som möjliggör vår verksamhet och hjälper oss att utveckla tennisen, padeln och pickleballen i Kalmar.",
+  "paket": [
+    {
+      "namn": "Guldpartner",
+      "pris": "",
+      "beskrivning": "Synlighet på samtliga sidor, logga på hemsida och i hallen, inbjudan till partnermingel och rabatterade banor för anställda."
+    },
+    {
+      "namn": "Silverpartner",
+      "pris": "",
+      "beskrivning": "Logga på partnersida och i hallen, inbjudan till partnermingel."
+    },
+    {
+      "namn": "Bronspartner",
+      "pris": "",
+      "beskrivning": "Logga på partnersida med länk till hemsida."
+    }
+  ],
+  "partners": [],
+  "strip": [
+    {
+      "namn": "Avent",
+      "url": ""
+    },
+    {
+      "namn": "Bilkompani",
+      "url": ""
+    },
+    {
+      "namn": "ABHA",
+      "url": ""
+    },
+    {
+      "namn": "C-TV",
+      "url": ""
+    },
+    {
+      "namn": "Deloitte",
+      "url": ""
+    },
+    {
+      "namn": "Dina Försäkringar",
+      "url": ""
+    },
+    {
+      "namn": "Dörrmakeriet",
+      "url": ""
+    },
+    {
+      "namn": "Elovent",
+      "url": ""
+    },
+    {
+      "namn": "Energikakan",
+      "url": ""
+    },
+    {
+      "namn": "Handelsbanken",
+      "url": ""
+    },
+    {
+      "namn": "ICA Södercentrum",
+      "url": ""
+    },
+    {
+      "namn": "Infoservice",
+      "url": ""
+    },
+    {
+      "namn": "Intermezzo",
+      "url": ""
+    },
+    {
+      "namn": "ITsajten",
+      "url": ""
+    },
+    {
+      "namn": "Kalmar NDC",
+      "url": ""
+    },
+    {
+      "namn": "Kontorslagret",
+      "url": ""
+    },
+    {
+      "namn": "LR Installation",
+      "url": ""
+    },
+    {
+      "namn": "Länsförsäkringar",
+      "url": ""
+    },
+    {
+      "namn": "Advokat Löfström",
+      "url": ""
+    },
+    {
+      "namn": "MAX",
+      "url": ""
+    },
+    {
+      "namn": "Multibygg",
+      "url": ""
+    },
+    {
+      "namn": "Nordpolen Energi",
+      "url": ""
+    },
+    {
+      "namn": "Nybloms",
+      "url": ""
+    },
+    {
+      "namn": "POE Fastigheter",
+      "url": ""
+    },
+    {
+      "namn": "Rabergs Bil",
+      "url": ""
+    },
+    {
+      "namn": "Scandic",
+      "url": ""
+    },
+    {
+      "namn": "Solhemsgruppen",
+      "url": ""
+    },
+    {
+      "namn": "Skyltreklam",
+      "url": ""
+    },
+    {
+      "namn": "Sporrong & Eriksson",
+      "url": ""
+    },
+    {
+      "namn": "Hotell Svanen",
+      "url": ""
+    },
+    {
+      "namn": "Telebyrån",
+      "url": ""
+    },
+    {
+      "namn": "Viewledger",
+      "url": ""
+    },
+    {
+      "namn": "VS Installation",
+      "url": ""
+    }
   ]
 }
