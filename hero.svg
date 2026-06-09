@@ -1,46 +1,48 @@
 {
-  "rubrik": "Klubben för racketsport i Kalmar.",
-  "text": "Här samlas medlemmar, juniorer, motionärer och tävlingsspelare för tennis, padel, pickleball, gym och kurser - året runt.",
-  "bild": "images/sport/hero.svg",
-  "announcement": "",
-  "infopaneler": [
+  "rubrik": "Padel - snabbt, socialt och kul att lära sig.",
+  "ingress": "Padel är klubbens snabbast växande sport. Vi har padelskola från 5 år, vuxenkurser, sommarintensiver och fria banor att boka via Matchi.",
+  "bild": "images/sport/padel.svg",
+  "text": "Padel är lätt att komma igång med och passar både nybörjare och rutinerade spelare. Padelskoj är vår nyhet för de allra yngsta från 5 år.",
+  "kurser": [
     {
-      "label": "Reception",
-      "varde": "10.00–18.00",
-      "sub": "Måndag–torsdag"
+      "grupp": "Sommarkurser Padel 2026",
+      "tillfallen": [
+        {
+          "etikett": "v.23",
+          "namn": "Sommarkurs Padel",
+          "beskrivning": "Vecka 23 · Anmälan öppen",
+          "url": "https://www.matchi.se/forms/rX7hmqJ95B0Tnr5aG6UX"
+        },
+        {
+          "etikett": "v.28",
+          "namn": "Sommarkurs Padel",
+          "beskrivning": "Vecka 28 · Anmälan öppen",
+          "url": "https://www.matchi.se/forms/Sahcca1JaN3B04FqVUne"
+        },
+        {
+          "etikett": "v.29",
+          "namn": "Sommarkurs Padel",
+          "beskrivning": "Vecka 29 · Anmälan öppen",
+          "url": "https://www.matchi.se/forms/2Wxf5Q7CfnMQHGHM5zsi"
+        }
+      ]
     },
     {
-      "label": "Medlemspris",
-      "varde": "160 kr/h",
-      "sub": "Tennis, padel och pickleball"
-    },
-    {
-      "label": "Swish",
-      "varde": "123 388 50 43",
-      "sub": "Reception, shop & drop-in"
-    }
-  ],
-  "sportkort": [
-    {
-      "etikett": "Tennis",
-      "rubrik": "Träning, tävling och drop-in",
-      "text": "Juniorgrupper, vuxenkurser, sommarkurser och banor för vardagsspel.",
-      "bild": "images/sport/tennis.svg",
-      "lank": "tennis.html"
-    },
-    {
-      "etikett": "Padel",
-      "rubrik": "Kurser och spontanspel",
-      "text": "Padelskola från 5 år, vuxenkurser och bokning via Matchi.",
-      "bild": "images/sport/padel.svg",
-      "lank": "padel.html"
-    },
-    {
-      "etikett": "Pickleball",
-      "rubrik": "Snabbt, socialt och lätt att börja",
-      "text": "Perfekt för alla nivåer och åldrar.",
-      "bild": "images/sport/pickleball.svg",
-      "lank": "pickleball.html"
+      "grupp": "Padelskola Våren 2026",
+      "tillfallen": [
+        {
+          "etikett": "5–7 år",
+          "namn": "Padelskoj",
+          "beskrivning": "Lekfull start för de minsta",
+          "url": "https://www.matchi.se/forms/bEEfmyjWxhu9w9KCHE7S"
+        },
+        {
+          "etikett": "8–19 år",
+          "namn": "Padelskola",
+          "beskrivning": "Teknik, taktik och matchspel",
+          "url": "https://www.matchi.se/forms/xw8L49U89QTdNS9qgzDb"
+        }
+      ]
     }
   ]
 }
